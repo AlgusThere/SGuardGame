@@ -119,37 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &293001113
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 293001114}
-  m_Layer: 0
-  m_Name: Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &293001114
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293001113}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +364,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &858963732
+--- !u!1 &899116014
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -403,24 +372,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 858963733}
+  - component: {fileID: 899116015}
   m_Layer: 0
-  m_Name: EnemySpawnPoint
+  m_Name: EVENT MANAGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &858963733
+--- !u!4 &899116015
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858963732}
+  m_GameObject: {fileID: 899116014}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.07, y: -3.26, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -514,7 +483,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5672562441398014865, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
-      propertyPath: m_GravityScale
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5672562441398014865, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
+      propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6584457861654231981, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
@@ -557,6 +530,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7983215394897826615, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
+      propertyPath: _EnemySO
+      value: 
+      objectReference: {fileID: 11400000, guid: 61d81671aa46d124bace6506acc230db, type: 2}
     - target: {fileID: 9089230360246923345, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -644,13 +621,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
-    - target: {fileID: 3661771504804785149, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
-      propertyPath: _BulletSpeed
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661771504804785149, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
+    - target: {fileID: 3686099218595207035, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
       propertyPath: _FireDuration
-      value: 10
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865054249273997085, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
+      propertyPath: _FireRate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6865054249273997085, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
       propertyPath: _EnemyTransform
@@ -715,9 +692,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
+  - {fileID: 1937786983}
   - {fileID: 2087081070408351180}
   - {fileID: 3204022396302419264}
-  - {fileID: 293001114}
   - {fileID: 1813622211986386198}
-  - {fileID: 858963733}
-  - {fileID: 1937786983}
+  - {fileID: 899116015}

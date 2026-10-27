@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8225635743546873153}
   - component: {fileID: 4756046086980126617}
+  - component: {fileID: 1289939740145821768}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -30,8 +31,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 607714678794286376}
   - {fileID: 897216816421991714}
+  - {fileID: 607714678794286376}
   - {fileID: 382530574269835168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,9 +48,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66ae1901fefde040a45190bbf2be98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
-  _TowerHealth: 10
+  _TowerHealth: 100
   _TowerAttackSpeed: 2
   _TowerAttackRange: 3
+  _HealthSlider: {fileID: 6864753091255002202}
+--- !u!61 &1289939740145821768
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504819129104809389}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.00008034706, y: 0.008399844}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.0054307, y: 6.9193354}
+  m_EdgeRadius: 0
 --- !u!1 &2644011544647386899
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +177,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.25111246, g: 0.5377358, b: 0.48982087, a: 1}
@@ -151,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4451189627539271034}
-  - component: {fileID: 3661771504804785149}
+  - component: {fileID: 3686099218595207035}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -174,7 +222,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 607714678794286376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3661771504804785149
+--- !u!114 &3686099218595207035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,11 +231,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4414534006122604348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 083494d50d59d9742b93e20174a7c9b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0accd284c1113b24aa073014cf72ef61, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  m_EditorClassIdentifier: Assembly-CSharp::BulletPool
   _BulletPrefab: {fileID: 6464308241724610355, guid: 29559861e3335ca4595bc86a0ba80eff, type: 3}
-  _FireDuration: 2
+  _FireDuration: 1
+  _BulletSpeed: 10
   _Gun: {fileID: 6865054249273997085}
 --- !u!1 &5493477385874031571
 GameObject:
@@ -297,6 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gun
   _EnemyTransform: {fileID: 0}
   _TargetDetectionDistance: 16
+  _FireRate: 1
   _IsEnemyInDistance: 0
 --- !u!1001 &58358950416059294
 PrefabInstance:
@@ -408,3 +458,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 396405416106912830, guid: f45ba7cc0d0af104c888b67265647250, type: 3}
   m_PrefabInstance: {fileID: 58358950416059294}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6864753091255002202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6884831438362341316, guid: f45ba7cc0d0af104c888b67265647250, type: 3}
+  m_PrefabInstance: {fileID: 58358950416059294}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider

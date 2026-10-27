@@ -6,19 +6,14 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform _EnemyTransform;
     [SerializeField] float _TargetDetectionDistance = 5f;
     [SerializeField] float _FireRate = 1f;
+    [SerializeField] float _BulletSpeed = 10f;
 
-    public event Action _OnShoot;
+    // public event Action _OnShoot;
 
     public bool _IsEnemyInDistance;
 
     float _EnemyDistance;
     float _FireTimer = 0f;
-
-    void Start()
-    {
-        
-    }
-
 
     void Update()
     {
@@ -54,8 +49,22 @@ public class Gun : MonoBehaviour
 
         if(_FireTimer <= 0f)
         {
-            _OnShoot?.Invoke();
             _FireTimer = _FireRate;
+
+            GameObject _bullet = BulletPool.Instance.GetBulletFromPool();
+
+            if (_bullet != null)
+            {
+                _bullet.transform.SetPositionAndRotation(transform.position,transform.rotation);
+
+                Rigidbody2D _BulletRB = _bullet.GetComponent<Rigidbody2D>();
+                if(_BulletRB != null)
+                {
+                    _BulletRB.linearVelocity = transform.right * _BulletSpeed;
+                }
+
+                // _OnShoot?.Invoke();
+            }
         }
     }
 }
