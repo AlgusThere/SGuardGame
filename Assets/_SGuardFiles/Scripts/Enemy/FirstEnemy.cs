@@ -18,9 +18,9 @@ public class FirstEnemy : MonoBehaviour
         _Speed = _EnemySO._EnemySpeed;
         _Color = _EnemySO._EnemyColor;
 
-        Debug.Log(_Health);
-        Debug.Log(_Speed);
-        Debug.Log(_Color);
+        // Debug.Log(_Health);
+        // Debug.Log(_Speed);
+        // Debug.Log(_Color);
     }
 
     
@@ -32,6 +32,7 @@ public class FirstEnemy : MonoBehaviour
     public void TakeDamage(int _DamageAmount)
     {
         _Health -= _DamageAmount;
+        Debug.Log(_Health);
         if(_Health <= 0)
         {
             Destroy(gameObject);

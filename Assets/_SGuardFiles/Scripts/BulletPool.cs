@@ -10,6 +10,8 @@ public class BulletPool : MonoBehaviour
 
     [SerializeField] GameObject _BulletPrefab;
 
+    [SerializeField] Transform _FirePoint;
+
     [SerializeField] float _FireDuration = 1f;
 
     private Queue<GameObject> _Bullets;
@@ -31,7 +33,7 @@ public class BulletPool : MonoBehaviour
 
         for (int i = 0; i < POOl_SIZE; ++i)
         {
-            GameObject _Bullet = Instantiate(_BulletPrefab, Vector3.zero, Quaternion.identity, this.transform);
+            GameObject _Bullet = Instantiate(_BulletPrefab, Vector3.zero, Quaternion.identity, _FirePoint.transform);
             _Bullet.SetActive(false);
             _Bullets.Enqueue(_Bullet);
         }
@@ -44,31 +46,31 @@ public class BulletPool : MonoBehaviour
             GameObject _Bullet = _Bullets.Dequeue();
             _Bullet.SetActive(true);
 
-            StartCoroutine(DisableBulletAfterDelay(_Bullet, _FireDuration));
+            // StartCoroutine(DisableBulletAfterDelay(_Bullet, _FireDuration));
             return _Bullet;
         }
         else
         {
-            GameObject _NewBullet = Instantiate(_BulletPrefab, Vector3.zero, Quaternion.identity, this.transform);
+            GameObject _NewBullet = Instantiate(_BulletPrefab, Vector3.zero, Quaternion.identity, _FirePoint.transform);
             _NewBullet.SetActive(true);
 
-            StartCoroutine(DisableBulletAfterDelay(_NewBullet, _FireDuration));
+            // StartCoroutine(DisableBulletAfterDelay(_NewBullet, _FireDuration));
             return _NewBullet;
         }
     }
 
-    private void ReturnBulletToPool(GameObject _Bullet)
+    public void ReturnBulletToPool(GameObject _Bullet)
     {
         _Bullet.SetActive(false);
         _Bullets.Enqueue(_Bullet);
     }
 
-    private IEnumerator DisableBulletAfterDelay(GameObject _bullet, float delay)
-    {
-        yield return new WaitForSeconds(delay);
+    // private IEnumerator DisableBulletAfterDelay(GameObject _bullet, float delay)
+    // {
+    //     yield return new WaitForSeconds(delay);
         
-        if(_bullet.activeInHierarchy)
-            ReturnBulletToPool(_bullet);
-    }
+    //     if(_bullet.activeInHierarchy)
+    //         ReturnBulletToPool(_bullet);
+    // }
 
 }

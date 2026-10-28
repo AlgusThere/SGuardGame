@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097272749fe97704991480adfdfe56c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstEnemy
-  _EnemySO: {fileID: 0}
+  _EnemySO: {fileID: 11400000, guid: 61d81671aa46d124bace6506acc230db, type: 2}
 --- !u!212 &8024668576428644367
 SpriteRenderer:
   serializedVersion: 3
@@ -134,8 +134,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &6165233627035468415
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

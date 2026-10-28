@@ -119,6 +119,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &381291435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 381291437}
+  - component: {fileID: 381291436}
+  m_Layer: 0
+  m_Name: BULLET POOL MANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &381291436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381291435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0accd284c1113b24aa073014cf72ef61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletPool
+  _BulletPrefab: {fileID: 6464308241724610355, guid: 29559861e3335ca4595bc86a0ba80eff, type: 3}
+  _FirePoint: {fileID: 1277622451}
+  _FireDuration: 2
+--- !u!4 &381291437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381291435}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,37 +411,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &899116014
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 899116015}
-  m_Layer: 0
-  m_Name: EVENT MANAGER
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &899116015
+--- !u!4 &1277622451 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4451189627539271034, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
+  m_PrefabInstance: {fileID: 3204022396302419264}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899116014}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1937786980
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,14 +503,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5672562441398014865, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5672562441398014865, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6584457861654231981, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.71
@@ -530,10 +543,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7983215394897826615, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
-      propertyPath: _EnemySO
-      value: 
-      objectReference: {fileID: 11400000, guid: 61d81671aa46d124bace6506acc230db, type: 2}
     - target: {fileID: 9089230360246923345, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -621,14 +630,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
-    - target: {fileID: 3686099218595207035, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
-      propertyPath: _FireDuration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865054249273997085, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
-      propertyPath: _FireRate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6865054249273997085, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
       propertyPath: _EnemyTransform
       value: 
@@ -696,4 +697,4 @@ SceneRoots:
   - {fileID: 2087081070408351180}
   - {fileID: 3204022396302419264}
   - {fileID: 1813622211986386198}
-  - {fileID: 899116015}
+  - {fileID: 381291437}

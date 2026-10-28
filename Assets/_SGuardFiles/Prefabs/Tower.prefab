@@ -199,7 +199,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4451189627539271034}
-  - component: {fileID: 3686099218595207035}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -222,22 +221,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 607714678794286376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3686099218595207035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4414534006122604348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0accd284c1113b24aa073014cf72ef61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletPool
-  _BulletPrefab: {fileID: 6464308241724610355, guid: 29559861e3335ca4595bc86a0ba80eff, type: 3}
-  _FireDuration: 1
-  _BulletSpeed: 10
-  _Gun: {fileID: 6865054249273997085}
 --- !u!1 &5493477385874031571
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +330,7 @@ MonoBehaviour:
   _EnemyTransform: {fileID: 0}
   _TargetDetectionDistance: 16
   _FireRate: 1
+  _BulletSpeed: 15
   _IsEnemyInDistance: 0
 --- !u!1001 &58358950416059294
 PrefabInstance:
