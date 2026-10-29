@@ -12,7 +12,7 @@ public class BulletPool : MonoBehaviour
 
     [SerializeField] Transform _FirePoint;
 
-    [SerializeField] float _FireDuration = 1f;
+    // [SerializeField] float _FireDuration = 1f;
 
     private Queue<GameObject> _Bullets;
 

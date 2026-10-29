@@ -5,8 +5,6 @@ public class Tower : MonoBehaviour
 {
     [Header("Tower Values")]
     [SerializeField] int _TowerHealth = 100;
-    [SerializeField] float _TowerAttackSpeed = 2f;
-    [SerializeField] float _TowerAttackRange = 3f;
 
     [SerializeField] Slider _HealthSlider;
     

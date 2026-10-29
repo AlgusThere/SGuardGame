@@ -49,8 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
   _TowerHealth: 100
-  _TowerAttackSpeed: 2
-  _TowerAttackRange: 3
   _HealthSlider: {fileID: 6864753091255002202}
 --- !u!61 &1289939740145821768
 BoxCollider2D:
@@ -327,11 +325,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c259bc8da48770d469c385ff31d30716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
-  _EnemyTransform: {fileID: 0}
   _TargetDetectionDistance: 16
+  _EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
   _FireRate: 1
   _BulletSpeed: 15
-  _IsEnemyInDistance: 0
 --- !u!1001 &58358950416059294
 PrefabInstance:
   m_ObjectHideFlags: 0
