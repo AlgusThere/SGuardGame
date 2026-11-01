@@ -34,7 +34,8 @@ public class FirstEnemy : MonoBehaviour
         _Health -= _DamageAmount;
         Debug.Log(_Health);
         if(_Health <= 0)
-        {
+        {   
+            EventManager._DusmanOldu?.Invoke();
             Destroy(gameObject);
         }
     }
