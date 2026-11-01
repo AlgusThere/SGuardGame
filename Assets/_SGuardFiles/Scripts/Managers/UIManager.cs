@@ -18,6 +18,6 @@ public class UIManager : MonoBehaviour
     void UpdateScore()
     {
         Score.AddScore(10);
-        _ScoreText.text = Score._ScoreValue.ToString();
+        _ScoreText.text = "SCORE: " + Score._ScoreValue.ToString();
     }
 }

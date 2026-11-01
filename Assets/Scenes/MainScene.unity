@@ -919,6 +919,7 @@ MonoBehaviour:
     _EnemyPrefab: {fileID: 9089230360246923345, guid: 53e6b6637b05f214caf4df849f2c8ac3, type: 3}
     _EnemyCount: 4
     _SpawnRate: 1.5
+  _StartWaveButton: {fileID: 252247241}
 --- !u!1 &1208206679
 GameObject:
   m_ObjectHideFlags: 0

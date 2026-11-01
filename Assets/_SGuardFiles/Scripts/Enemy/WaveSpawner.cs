@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Wave
@@ -14,6 +15,8 @@ public class WaveSpawner : MonoBehaviour
 {
     [Header("Wave Settings")]
     [SerializeField] Wave[] _Waves;
+
+    [SerializeField] Button _StartWaveButton;
     
     private int _CurrentWaveIndex = 0;
     private bool _IsWaveActive;
@@ -24,6 +27,7 @@ public class WaveSpawner : MonoBehaviour
         {
             return;
         }
+        _StartWaveButton.interactable = false;
 
         StartCoroutine(SpawnWaveRoutine());
     }
@@ -47,5 +51,6 @@ public class WaveSpawner : MonoBehaviour
 
         _CurrentWaveIndex++;
         _IsWaveActive = false;
+        _StartWaveButton.interactable = true;
     }
 }
