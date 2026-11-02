@@ -593,6 +593,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &410785088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 385402441311130413, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
+  m_PrefabInstance: {fileID: 3204022396302419264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bf3c9362f60254eb9f144a5a2b6fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeGun
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1586,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2006431833}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 410785088}
+        m_TargetAssemblyTypeName: UpgradeGun, Assembly-CSharp
+        m_MethodName: DoUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2006431833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,10 +1709,6 @@ PrefabInstance:
     - target: {fileID: 1504819129104809389, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
       propertyPath: m_Name
       value: Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 6905272264444826471, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8225635743546873153, guid: 32faeef123b790e4d9626d564075b8f9, type: 3}
       propertyPath: m_LocalPosition.x

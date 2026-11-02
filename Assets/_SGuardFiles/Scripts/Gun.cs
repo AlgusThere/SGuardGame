@@ -10,10 +10,20 @@ public class Gun : MonoBehaviour
     [SerializeField] float _BulletSpeed = 10f;
     public float _FireRate = 1f;
 
-    // public event Action _OnShoot;
-
     Transform _CurrentTarget;
     float _FireTimer = 0f;
+
+    // public event Action _OnShoot;
+
+    void OnEnable()
+    {
+        EventManager._IncraseFireRateAction += IncraseFireRate;
+    }
+
+    void OnDisable()
+    {
+        EventManager._IncraseFireRateAction -= IncraseFireRate;
+    }
 
     void Update()
     {
@@ -86,4 +96,10 @@ public class Gun : MonoBehaviour
     //     Gizmos.color = Color.red;
     //     Gizmos.DrawWireSphere(transform.position, _TargetDetectionDistance);
     // }
+
+    private void IncraseFireRate(float _Amount)
+    {
+        _FireRate -= _Amount;
+        Debug.Log(_FireRate);
+    }
 }

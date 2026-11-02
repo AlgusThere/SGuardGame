@@ -17,5 +17,18 @@ public static class EventManager
     }
     #endregion
 
-    
+    #region UpgradeSystem
+    public static Action<int> _UpgradeGunAction;
+    public static Action<float> _IncraseFireRateAction;
+
+    public static void UpgradeFireRate(int _UpgradeAmount)
+    {
+        _UpgradeGunAction?.Invoke(_UpgradeAmount);
+    }
+
+    public static void IncraseFireRate(float _IncraseFireRate)
+    {
+        _IncraseFireRateAction?.Invoke(_IncraseFireRate);
+    }
+    #endregion
 }

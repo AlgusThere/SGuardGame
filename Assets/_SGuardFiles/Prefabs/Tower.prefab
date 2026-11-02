@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 607714678794286376}
   - component: {fileID: 8665083639343578153}
   - component: {fileID: 6865054249273997085}
+  - component: {fileID: 385402441311130413}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -329,8 +330,21 @@ MonoBehaviour:
   _EnemyLayer:
     serializedVersion: 2
     m_Bits: 8
-  _FireRate: 1
   _BulletSpeed: 15
+  _FireRate: 1
+--- !u!114 &385402441311130413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493477385874031571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bf3c9362f60254eb9f144a5a2b6fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeGun
+  _UpgradeCost: 10
 --- !u!1001 &58358950416059294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -422,6 +436,10 @@ PrefabInstance:
     - target: {fileID: 4725979598716796948, guid: f45ba7cc0d0af104c888b67265647250, type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853108289494112505, guid: f45ba7cc0d0af104c888b67265647250, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8932612478069691144, guid: f45ba7cc0d0af104c888b67265647250, type: 3}
       propertyPath: m_AnchorMax.x
