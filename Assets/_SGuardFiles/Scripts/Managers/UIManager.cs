@@ -4,20 +4,26 @@ public class UIManager : MonoBehaviour
 {
 
     [SerializeField] TMPro.TextMeshProUGUI _ScoreText;
+    [SerializeField] Score _ScoreManager;
+
 
     void OnEnable()
     {
-        EventManager._DusmanOldu += UpdateScore;
+        EventManager._SkorGuncelleAction += UpdateScore;
     }
 
     void OnDisable()
     {
-        EventManager._DusmanOldu -= UpdateScore;
+        EventManager._SkorGuncelleAction -= UpdateScore;
     }
 
-    void UpdateScore()
+    void Start()
     {
-        Score.AddScore(10);
-        _ScoreText.text = "SCORE: " + Score._ScoreValue.ToString();
+        UpdateScore(_ScoreManager._ScoreValue);
+    }
+
+    void UpdateScore(int _Amount)
+    {
+        _ScoreText.text = $"SCORE: {_Amount}";
     }
 }

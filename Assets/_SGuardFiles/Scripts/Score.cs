@@ -1,17 +1,30 @@
 
-using Unity.VisualScripting;
+using System;
+using UnityEngine;
 
-public static class Score
+public class Score : MonoBehaviour
 {
-    public static int _ScoreValue = 0;
+    public int _ScoreValue {get; private set;}
 
-    public static void Start()
+    void OnEnable()
+    {
+        EventManager._DusmanOldu += AddScore;
+    }
+
+    void OnDisable()
+    {
+        EventManager._DusmanOldu -= AddScore;
+    }
+
+    public void Start()
     {
         _ScoreValue = 0;
     }
 
-    public static void AddScore(int _Amount)
+    public void AddScore(int _Amount)
     {
         _ScoreValue += _Amount;
+
+        EventManager.SkorGuncelle(_ScoreValue);
     }
 }

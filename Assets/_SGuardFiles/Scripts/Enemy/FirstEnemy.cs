@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FirstEnemy : MonoBehaviour
 {
+    [Header("Enemy SO")]
     [SerializeField] EnemySO _EnemySO;
 
     [Header("Audio Broadcasting")]
@@ -13,6 +14,7 @@ public class FirstEnemy : MonoBehaviour
     int _Health;
     float _Speed;
     Color _Color;
+    int _ScoreAmount;
     
     void Start()
     {
@@ -21,6 +23,7 @@ public class FirstEnemy : MonoBehaviour
         _Health = _EnemySO._EnemyHealth;
         _Speed = _EnemySO._EnemySpeed;
         _Color = _EnemySO._EnemyColor;
+        _ScoreAmount = _EnemySO._ScoreAmount;
 
         // Debug.Log(_Health);
         // Debug.Log(_Speed);
@@ -39,6 +42,7 @@ public class FirstEnemy : MonoBehaviour
         Debug.Log(_Health);
         if(_Health <= 0)
         {   
+            EventManager.DusmanYokEdildi(_ScoreAmount);
             _SFXChannel?.RaisePlayEvent(_DeathSoundCue);
             Destroy(gameObject);
         }
