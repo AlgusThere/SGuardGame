@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstEnemy
   _EnemySO: {fileID: 11400000, guid: 61d81671aa46d124bace6506acc230db, type: 2}
+  _DeathSoundCue: {fileID: 11400000, guid: dcb7ad92fe676a94a876452eca736a04, type: 2}
+  _SFXChannel: {fileID: 11400000, guid: 889f795c0654ca34cbc4f9b2ccfc95f7, type: 2}
 --- !u!212 &8024668576428644367
 SpriteRenderer:
   serializedVersion: 3

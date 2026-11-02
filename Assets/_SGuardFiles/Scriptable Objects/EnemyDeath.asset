@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6106e078ef0ea459ea283471f57c66, type: 3}
+  m_Name: EnemyDeath
+  m_EditorClassIdentifier: Assembly-CSharp::AudioCueSO
+  _AudioClip: {fileID: 8300000, guid: 241a0def51d9e994f8e7d5756d132c43, type: 3}
+  _Volume: 1
+  _UseRandomPitch: 1
+  _MinPitch: 0.9
+  _MaxPitch: 1.1

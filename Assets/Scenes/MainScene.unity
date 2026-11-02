@@ -164,7 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76df2335a986664796e7203bc602514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  _EnemyDeadAudio: {fileID: 101688932}
+  _sfxSource: {fileID: 101688932}
+  _sfxChannel: {fileID: 11400000, guid: 889f795c0654ca34cbc4f9b2ccfc95f7, type: 2}
 --- !u!82 &101688932
 AudioSource:
   m_ObjectHideFlags: 0
@@ -176,7 +177,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 241a0def51d9e994f8e7d5756d132c43, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

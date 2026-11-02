@@ -2,22 +2,26 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [Header("Enemy Sounds")]
-    [SerializeField] AudioSource _EnemyDeadAudio;
+    [SerializeField]  AudioSource _sfxSource;
+    [SerializeField]  AudioEventChannelSO _sfxChannel;
 
     void OnEnable()
     {
-        EventManager._DusmanOldu += PlayEnemyDeadAudio;
+        if(_sfxChannel != null)
+            _sfxChannel._OnAudioPlayRequested += PlayAudioCue;
     }
 
     void OnDisable()
     {
-        EventManager._DusmanOldu -= PlayEnemyDeadAudio;
+        if(_sfxChannel != null)
+            _sfxChannel._OnAudioPlayRequested -= PlayAudioCue;
     }
 
-    public void PlayEnemyDeadAudio()
+    void PlayAudioCue(AudioCueSO _AudioCueSO)
     {
-        _EnemyDeadAudio.PlayOneShot(_EnemyDeadAudio.clip);
+        _sfxSource.pitch = _AudioCueSO._UseRandomPitch ? Random.Range(_AudioCueSO._MinPitch, _AudioCueSO._MaxPitch) : 1f;
+
+        _sfxSource.PlayOneShot(_AudioCueSO._AudioClip, _AudioCueSO._Volume);
     }
 
 }

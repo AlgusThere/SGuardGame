@@ -4,6 +4,10 @@ public class FirstEnemy : MonoBehaviour
 {
     [SerializeField] EnemySO _EnemySO;
 
+    [Header("Audio Broadcasting")]
+    [SerializeField] AudioCueSO _DeathSoundCue;
+    [SerializeField] AudioEventChannelSO _SFXChannel;
+
     Rigidbody2D _RB;
 
     int _Health;
@@ -35,7 +39,7 @@ public class FirstEnemy : MonoBehaviour
         Debug.Log(_Health);
         if(_Health <= 0)
         {   
-            EventManager._DusmanOldu?.Invoke();
+            _SFXChannel?.RaisePlayEvent(_DeathSoundCue);
             Destroy(gameObject);
         }
     }
