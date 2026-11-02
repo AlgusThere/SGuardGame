@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
+    [Header("Score")]
     [SerializeField] TMPro.TextMeshProUGUI _ScoreText;
     [SerializeField] Score _ScoreManager;
 

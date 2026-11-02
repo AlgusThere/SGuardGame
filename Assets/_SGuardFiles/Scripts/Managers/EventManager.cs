@@ -2,7 +2,7 @@ using System;
 
 public static class EventManager
 {
-    // public static Action _DusmanaMermiCarpti;
+    #region DusmanOlunce
     public static Action<int> _DusmanOldu;
     public static Action<int> _SkorGuncelleAction;
 
@@ -15,4 +15,7 @@ public static class EventManager
     {
         _SkorGuncelleAction?.Invoke(_CurrentScore);
     }
+    #endregion
+
+    
 }

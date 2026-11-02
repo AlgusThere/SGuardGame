@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -8,8 +7,8 @@ public class Gun : MonoBehaviour
     [SerializeField] LayerMask _EnemyLayer;
     
     [Header("Values")]
-    [SerializeField] float _FireRate = 1f;
     [SerializeField] float _BulletSpeed = 10f;
+    public float _FireRate = 1f;
 
     // public event Action _OnShoot;
 
